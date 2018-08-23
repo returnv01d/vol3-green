@@ -9,6 +9,6 @@ deploy:
   provider: heroku
   api_key:
   secure: "lbXRX9uHxYjuEul4T4nRw+LmcSxvlCK3PrCo8rXTV0bLxDqG4JHNHu4KsiaxVpOYK3mREbjXwDLHaUBU378Ns2EnWB3flwLpyzlWp8pZlfZR5Ro6T5uEgKQsu7XsKxIjsn9RstW+RpoOQDoz/rYoyYdw0L2TTdrhc3KjnSiWMgoZdskGyRUgnDDkJUjO5hVDDHNEYCQPegrCKZiVTRf/ZLuIZ8MM/2yEFmQFWhZoOjDjIpQBV+YITsMhWnz3Pa5bXAQt3uURcHygZ4GosyUZ6vrCXbpnCAIMdEzGuR3MTaeMkTIqN6eVPrbxz30zYJg1cFwSREw+wfmtBNMJqSYGEgSwZtNKfqjtiLlv0U/pp/ZD2icU6YygsqBAQoQeJJSQaG7CYQB/3rYSbHj6FYeZI/X0Ekv/GQ9ilJ7IGLwVDimoHujaU5afd7R1JkIxYUCerCX2pWUgA8mXqtpm/4ehcGD1hzfTyxmJKzCillnc9bkAuePVXLil9E6lJE98c3LhpE371E4fRBOmXXIhVuAJ/pa4RXfPSi3PI+SJHKD/QID4GXKfAj/8q+epyiN7Vzsd1r8yM7s2V/gg6xiskM0GhNlC9NN1JA+dsGijBE/bugBTW/H/jvPSrRxpyFKXeR+zzjaNka9i5K5FSyMzRd923sKnmt6JvC4fYtTLLucUox8="
-  app: travel-hero
+  app: zjedliwe-pl
   on:
 repo: netguru-code-college/vol3-green
