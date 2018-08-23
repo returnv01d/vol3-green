@@ -2,9 +2,10 @@ language: ruby
 cache:
 - bundler
 before_script:
+- psql -c "CREATE USER skateparks WITH PASSWORD 'skateparks';" -U postgres
 - bundle exec rake db:create
 - bundle exec rake db:migrate
-# - bundle exec rake assets:precompile
+- bundle exec rake assets:precompile
 deploy:
   provider: heroku
   api_key:
