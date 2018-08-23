@@ -13,6 +13,10 @@ Things you may want to cover:
 
 * Database creation
 
+Set the following:
+- `DB_USERNAME` -> your postgres role
+- `DB_PASSWORD` -> your postgres role's password
+
 * Database initialization
 
 * How to run the test suite
