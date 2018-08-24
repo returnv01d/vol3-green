@@ -1,6 +1,7 @@
 <h1>works?</h1>
+<%= alert %>
 <% @caterings.each do |catering| %>
-	<%= catering.name %>
+	<%= link_to "#{catering.name}", catering_path(catering.id) %>
 	<%= catering.city %>
 	<%= catering.description %>
 	<br />
