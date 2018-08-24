@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <div class="alert-wrapper">
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </div>
+    <div class="notice-wrapper">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
