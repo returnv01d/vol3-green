@@ -1,28 +1,31 @@
-# README
+#### Zjadliwe.pl ####
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description ##
+----
+Necessity is the mother of inventions. People constantly forget things, sometimes even to order their meal, and You won't work efficiently when You're hungry, righy?
+This is where we come in. 
+With our application You need not to remember to order meal everyday, just choose Your preferences, and we will put our most effort to keep You well fed and happy with Your meal. ;)
 
-Things you may want to cover:
 
-* Ruby version
+There might be heroku app one day: http://zjadliwe-pl.herokuapp.com/
 
-* System dependencies
+## Gems we use ##
+----
+Gem name  | Version
+----------|--------
+Ruby      | 2.5.1
+Rails     | 5.2.1
+Bootstrap | 4.1.3
+Devise    | 4.5.0
+Rspec     | 3.8.0
 
-* Configuration
+## How to run tests ##
+----
+Just Type `rspec` in the console
 
-* Database creation
 
+
+is this relevant?
 Set the following:
 - `DB_USERNAME` -> your postgres role
 - `DB_PASSWORD` -> your postgres role's password
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
