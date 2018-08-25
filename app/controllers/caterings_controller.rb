@@ -7,8 +7,7 @@ class CateringsController < ApplicationController
 	def show
 		begin @catering = Catering.find(params[:id])
 		rescue ActiveRecord::RecordNotFound
-			flash.now.alert = "This Catering does not exist"
-			redirect_to :index
+			record_not_found()
 		end
 	end
 
@@ -34,13 +33,8 @@ class CateringsController < ApplicationController
 
 	private
 
-	def catering_params
-		params.require(:catering).permit(:author, :content)
-	end
-	rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
-
 	def record_not_found
-		redirect_to caterings_path
+		redirect_to root_path
 		flash[:alert] = "No such catering"
 	end
 end
