@@ -1,7 +1,7 @@
 class CateringsController < ApplicationController
 
 	def index
-		@caterings = Catering.all
+    @caterings = Catering.all
 	end
 
 	def show
@@ -39,12 +39,6 @@ class CateringsController < ApplicationController
 			redirect_to edit_catering_path
 			flash[:alert] = "Try again!"
 		end
-	end
-
-	def destroy
-		@catering = Catering.find_by_id(params[:id])
-		@catering.destroy
-		flash[:notice] = "Catering destroyed ;'("
 	end
 
 	private
