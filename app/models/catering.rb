@@ -1,5 +1,6 @@
 class Catering < ApplicationRecord
-	validates :name, :city, presence: true
-	has_many :daily_meals
-	has_many :meals
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
