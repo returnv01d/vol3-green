@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :caterings
+  resources :caterings do
+    resources :meals, only: [:index, :show, :edit]
+  end
   root to: "caterings#index"
 
-  resources :meals, only: [:index, :show, :edit]
 end
