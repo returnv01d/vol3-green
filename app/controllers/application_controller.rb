@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def devise_parameter_sanitizer
     if resource_class == User
       User::ParameterSanitizer.new(User, :user, params)
-    elsif
+    elsif resource_class == Catering
       Catering::ParameterSanitizer.new(Catering, :catering, params)
     else
       super
