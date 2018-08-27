@@ -1,19 +1,19 @@
 class IngredientsController < ApplicationController
-  def new
-  end
-
   def index
+    # The ingredients  can list all the ingredients available
+    @ingredients = Ingredient.all
   end
-
-  def show
-  end
-
-  def update
-  end
-
-  def edit
-  end
-
   def create
+  # The ingredients service can create a specific ingredient
   end
+  def edit
+  # The ingredients  service can edit a specific ingredient
+  end
+  def update
+  # The ingredients  service can update a specific ingredient
+  end
+  def show
+  # The ingredients  service can update a specific ingredient
+  end
+
 end
