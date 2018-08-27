@@ -13,7 +13,11 @@ class IngredientsController < ApplicationController
   # The ingredients  service can update a specific ingredient
   end
   def show
+  # The ingredients  service can show a specific ingredient
+  end
+  def new
   # The ingredients  service can update a specific ingredient
+    @ingredient = Ingredient.new
   end
 
 end
