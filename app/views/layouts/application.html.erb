@@ -20,6 +20,35 @@
         <p class="notice"><%= notice %></p>
       <% end %>
     </div>
+    <header>
+      <nav class="navbar navbar-default">
+        <% if user_signed_in? %>
+          <nav class="navbar-left">
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-success' %>
+            <%= link_to 'Account', edit_user_registration_path, class: 'btn btn-success' %>
+          </nav>
+        <% elsif catering_signed_in? %>
+          <nav class="navbar-left">
+            <%= link_to 'Log out', destroy_catering_session_path, method: :delete, class: 'btn btn-success' %>
+            <%= link_to 'Account', edit_catering_registration_path, class: 'btn btn-success' %>
+          </nav>
+        <% else %>
+          <nav class="navbar-left">
+            For Users:
+            <%= link_to 'Log in', new_user_session_path, class: 'btn btn-success' %>
+            <%= link_to 'Register', new_user_registration_path, class: 'btn btn-success' %>
+          </nav>
+          <nav class="navbar-right">
+            For Caterings:
+            <%= link_to 'Log in', new_catering_session_path, class: 'btn btn-success' %>
+            <%= link_to 'Register', new_catering_registration_path, class: 'btn btn-success' %>
+          </nav>
+        <% end %>
+      </nav>
+    </header>
+    <div class="page-header">
+      <h1><%= link_to "Zjadliwe ;)", root_path %></h1>
+    </div>
     <%= yield %>
   </body>
 </html>
