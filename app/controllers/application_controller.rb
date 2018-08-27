@@ -1,10 +1,16 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :devise_parameter_sanitizer, if: :devise_controller?
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :city])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :city])
+  def devise_parameter_sanitizer
+    if resource_class == User
+      User::ParameterSanitizer.new(User, :user, params)
+    elsif
+      Catering::ParameterSanitizer.new(Catering, :catering, params)
+    else
+      super
+    end
   end
+
 end
