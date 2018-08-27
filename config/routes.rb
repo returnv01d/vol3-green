@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'ingredients/new'
+  get 'ingredients/index'
+  get 'ingredients/show'
+  get 'ingredients/update'
+  get 'ingredients/edit'
+  get 'ingredients/create'
   devise_for :caterings
   devise_for :users
   
