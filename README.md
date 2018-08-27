@@ -6,8 +6,7 @@ Necessity is the mother of inventions. People constantly forget things, sometime
 This is where we come in. 
 With our application You need not to remember to order meal everyday, just choose Your preferences, and we will put our most effort to keep You well fed and happy with Your meal. ;)
 
-
-There might be heroku app one day: http://zjadliwe-pl.herokuapp.com/
+####[Heroku!!](http://zjadliwe.herokuapp.com/)####
 
 ### Gems we use ###
 ----
