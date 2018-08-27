@@ -1,6 +1,6 @@
-<% @caterings.each do |catering| %>
-	<%= link_to "#{catering.name}", catering_path(catering.id) %>
-	<%= catering.city %>
-	<%= catering.description %>
-	<br />
+<% if user_signed_in? %>
+  <%= @caterings.each do |catering| %>
+    <%= catering.id %>
+    <%= catering.email %>
+  <% end %>
 <% end %>
