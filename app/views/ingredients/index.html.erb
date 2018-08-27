@@ -1,8 +1,24 @@
 <h1>Ingredients</h1>
-<p>Find me in app/views/ingredients/index.html.erb</p>
+<p><%= link_to "Add ingredient", new_ingredient_path, class: "btn btn-success" %></p>
+<table class="table table-stripped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        Name
+      </th>
 
-
-<% @ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
-  <button type="button" name="button" class="btn btn-success">Press</button>
-<% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each.with_index(1) do |ingredient, index| %>
+    <tr>
+      <th scope="row">
+        <%= index %>
+      </th>
+      <td>
+        <p><%= ingredient.name %></p>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
