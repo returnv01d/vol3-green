@@ -23,10 +23,12 @@ gem 'jquery-rails'
 # Authentication purposes
 gem 'devise', '~> 4.5.0'
 
+# Heroku probably wants to have rspec in production
+gem 'rspec-rails', '~> 3.8'
+gem 'rspec', '~> 3.8'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.8'
-  gem 'rspec', '~> 3.8'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
 end
 
