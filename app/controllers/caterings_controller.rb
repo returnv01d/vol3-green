@@ -1,5 +1,5 @@
 class CateringsController < ApplicationController
-
+  before_action :authenticate_user!
 	def index
     @caterings = Catering.all
 	end
