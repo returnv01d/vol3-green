@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_08_28_094831) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,18 +30,16 @@ ActiveRecord::Schema.define(version: 2018_08_28_094831) do
     t.index ["reset_password_token"], name: "index_caterings_on_reset_password_token", unique: true
   end
 
-
   create_table "daily_meals", force: :cascade do |t|
     t.date "serving_day"
     t.bigint "catering_id"
     t.bigint "meal_id"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["catering_id"], name: "index_daily_meals_on_catering_id"
     t.index ["meal_id"], name: "index_daily_meals_on_meal_id"
   end
-  
+
   create_table "diets", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -68,7 +64,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_094831) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "name", null: false, unique: true
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,19 +89,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_094831) do
     t.bigint "user_id"
     t.index ["catering_id"], name: "index_subscriptions_on_catering_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
-  end
-
-  create_table "meals", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_allergies", force: :cascade do |t|
-    t.bigint "ingredient_id"
-    t.bigint "user_id"
-    t.index ["ingredient_id"], name: "index_user_allergies_on_ingredient_id"
-    t.index ["user_id"], name: "index_user_allergies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,7 +9,7 @@ class CateringsController < ApplicationController
 		rescue ActiveRecord::RecordNotFound
 			record_not_found()
 		end
-    @daily_meals_today = DailyMeal.where("catering_id = ? AND serving_day = ?" ,@catering.catering_id, Date.today)
+    @daily_meals_today = DailyMeal.where("catering_id = ? AND serving_day = ?" ,@catering.id, Date.today).take(10)
 	end
 
 	private
