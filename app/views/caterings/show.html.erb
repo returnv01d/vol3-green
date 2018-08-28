@@ -2,9 +2,9 @@
 <%= @catering.city %>
 <%= @catering.desc %>
 <ol>
-  <li><% @daily_meals_today.meals %>
-    <ul>
-      <li><% daily_meals_today.meals.ingredients %></li>
+  <li>
+    <ul><% @daily_meals_today.meals.each do |meal| %>
+      <li><% meal.ingredients %></li>
     </ul>
   </li>
 </ol>
