@@ -15,5 +15,6 @@ class User < ApplicationRecord
                           class_name: 'Diet',
                           foreign_key: 'user_id',
                           join_table: :users_diets
+  has_many :food_requests
 
 end
