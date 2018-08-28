@@ -1,4 +1,6 @@
 <% @caterings.each do |catering| %>
-	<%= link_to "#{catering.name}", catering_path(catering.id) %>
+  <h3><%= link_to "#{catering.name}", catering_path(catering.id) %></h3>
+  <%= catering.city %><br />
+  <%= catering.description %>
 	<br />
 <% end %>
