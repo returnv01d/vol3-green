@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :caterings, only: [:index, :show] do
-    resources :meals, only: [:index, :show, :edit]
+    resources :meals, only: [:index, :show, :edit, :new, :create]
   end
   root to: "welcome#index"
 end

@@ -15,8 +15,27 @@ class MealsController < ApplicationController
   end
 
   def edit
-    # @meal = Meal.find(params[:id])
     # The catering service can edit a specific meal
     # (as in, its ingredients)
+    @meal = Meal.find(params[:id])
+  end
+
+  def new
+    @meal = Meal.new
+  end
+
+  def create
+    @meal = Meal.new(
+      name: params.require(:meal).permit(:name),
+      catering: current_catering
+    )
+
+    if @meal.save
+      flash[:success] = "Meal successfully created!"
+      redirect_to new_catering_meal_path
+    else
+      flash[:error] = "Something failed."
+      render :new
+    end
   end
 end

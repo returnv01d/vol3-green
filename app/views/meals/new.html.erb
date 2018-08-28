@@ -1,0 +1,7 @@
+<div class="container">
+  <%= form_for @meal, url: catering_meals_path, method: 'post' do |f| %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "meal_name" %>
+    <%= f.submit %>
+  <% end %>
+</div>
