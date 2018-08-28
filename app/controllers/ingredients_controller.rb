@@ -12,6 +12,7 @@ class IngredientsController < ApplicationController
   end
   def edit
   # The ingredients  service can edit a specific ingredient
+    @ingredient = Ingredient.find(params[:id])
   end
   def update
   # The ingredients  service can update a specific ingredient
