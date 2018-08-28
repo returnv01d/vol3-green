@@ -26,16 +26,15 @@ class MealsController < ApplicationController
 
   def create
 
-    @meal = Meal.new(
-      name: meal_params[:name],
-      catering: current_catering
+    @meal = current_catering.meals.build(
+      name: meal_params[:name]
     )
 
     if @meal.save
-      flash[:success] = "Meal successfully created!"
+      flash[:notice] = "Meal successfully created!"
       redirect_to new_catering_meal_path
     else
-      flash[:error] = "Something failed."
+      flash[:alert] = "Something failed."
       render :new
     end
   end
