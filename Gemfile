@@ -3,25 +3,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-gem 'rails', '~> 5.2.1'
+gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap', '~> 4.1.3'
+gem 'coffee-rails', '~> 4.2'
+gem 'devise', '~> 4.5.0'
+gem 'execjs'
+gem 'ffaker'
+gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'mini_racer', '~> 0.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.1'
+gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'execjs'
 # gem 'therubyracer'
 # Bootstrap does not want to work with trr, it prefers miniracer
-gem 'mini_racer', '~> 0.2.0'
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-
-gem 'bootsnap', '>= 1.1.0', require: false
-
-gem 'bootstrap', '~> 4.1.3'
-gem 'jquery-rails'
 # Authentication purposes
-gem 'devise', '~> 4.5.0'
 
 # Heroku probably wants to have rspec in production
 gem 'rspec-rails', '~> 3.8'
