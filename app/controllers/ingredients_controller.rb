@@ -1,4 +1,6 @@
 class IngredientsController < ApplicationController
+  before_action :authenticate_catering!
+  
   def index
     # The ingredients  can list all the ingredients available
     @ingredients = Ingredient.all
@@ -6,9 +8,14 @@ class IngredientsController < ApplicationController
   def create
   # The ingredients service can create a specific ingredient
     @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.save
-    flash[:notice] = "Ingredient added successfully!"
+
+    if @ingredient.save
+      flash[:notice] = "Ingredient added successfully!"
+    else
+      flash[:notice] = "Ingredient not saved!"
+    end
     redirect_to ingredients_path
+
   end
   def edit
   # The ingredients  service can edit a specific ingredient
