@@ -5,6 +5,7 @@ class MealsController < ApplicationController
   def index
     # The catering service can list all the meals they offer
     @meals = Meal.where(catering: current_catering)
+    @catering = current_catering
   end
 
   def show
@@ -13,5 +14,5 @@ class MealsController < ApplicationController
     # Times ordered, last ordered, ...
     @meal = Meal.find(params.require(:id))
   end
-  
+
 end
