@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ingredients
   devise_for :caterings
   devise_for :users
   

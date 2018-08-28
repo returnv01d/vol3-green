@@ -13,41 +13,41 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+ @import "bootstrap";
 
-.alert, .notice{
-	margin: 0;
-	padding: 2rem;
-	font-weight: bold;
-	letter-spacing: 1px
-}
-.alert{
-	color:#8a6d3b;
-}
-.notice{
-	color: #fff;
-}
+ .alert, .notice{
+ 	margin: 0;
+ 	padding: 2rem;
+ 	font-weight: bold;
+ 	letter-spacing: 1px
+ }
+ .alert{
+ 	color:#8a6d3b;
+ }
+ .notice{
+ 	color: #fff;
+ }
 
-.alert-wrapper, .notice-wrapper {
-	position: absolute;
-	top: 0;
-	text-align: center;
-	width: 100%;
-	z-index: 99;
-}
-.alert-wrapper{
-	background-color: rgba(252,248,227,.85);
-}
-.notice-wrapper{
-	background-color: rgba(135,216,211,.85);
-}
+ .alert-wrapper, .notice-wrapper {
+ 	position: absolute;
+ 	top: 0;
+ 	text-align: center;
+ 	width: 100%;
+ 	z-index: 99;
+ }
+ .alert-wrapper{
+ 	background-color: rgba(252,248,227,.85);
+ }
+ .notice-wrapper{
+ 	background-color: rgba(135,216,211,.85);
+ }
 
-.navbar-default{
-	padding: 1.3rem;
-	background-color: #777;
-	color: white; 
-}
-.page-header{
-	text-align: center;
-	margin: 10px 0;
-}
+ .navbar-default{
+ 	padding: 1.3rem;
+ 	background-color: #777;
+ 	color: white;
+ }
+ .page-header{
+ 	text-align: center;
+ 	margin: 10px 0;
+ }

@@ -1,0 +1,31 @@
+<h1>Ingredients</h1>
+<% if flash[:notice].present? %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div>
+  <p><%= link_to "Add ingredient", new_ingredient_path, class: "btn btn-success" %></p>
+</div>
+<table class="table table-stripped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        Name
+      </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each.with_index(1) do |ingredient, index| %>
+    <tr>
+      <th scope="row">
+        <%= index %>
+      </th>
+      <td>
+        <p><%= ingredient.name %></p>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
