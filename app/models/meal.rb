@@ -4,6 +4,6 @@ class Meal < ApplicationRecord
   has_and_belongs_to_many :ingredients,
                           class_name: 'Ingredient' ,
                           foreign_key: 'meal_id',
-                          join_table: :meals_ingredient
+                          join_table: :meals_ingredients
 
 end
