@@ -1,0 +1,8 @@
+<h1>Add ingredients</h1>
+<%= form_for @ingredient do |i| %>
+  <div class="form-group">
+    <%= i.label :name, "Name" %>
+    <%= i.text_field :name, class: "form-control" %>
+  </div>
+  <%= i.submit "Add ingredient", class: "btn btn-success" %>
+<% end %>
