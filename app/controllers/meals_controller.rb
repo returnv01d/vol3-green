@@ -25,8 +25,9 @@ class MealsController < ApplicationController
   end
 
   def create
+
     @meal = Meal.new(
-      name: params.require(:meal).permit(:name),
+      name: meal_params[:name],
       catering: current_catering
     )
 
@@ -37,5 +38,11 @@ class MealsController < ApplicationController
       flash[:error] = "Something failed."
       render :new
     end
+  end
+
+  private
+
+  def meal_params
+    params.require(:meal).permit(:name)
   end
 end
