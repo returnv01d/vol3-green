@@ -1,5 +1,14 @@
-Name: <%= @catering.name %><br>
-City: <%= @catering.city %><br>
-Description: <%= @catering.description %>
-<br />
-<%= link_to "Back to start", root_path , class: "btn btn-success" %>
+
+<h3><%= @catering.name %></h3>
+<%= @catering.city %>
+<%= @catering.description %>
+<ol>
+  <% @daily_meals_today.each do |daily_meal| %>
+    <li><%= daily_meal.meal.name %>
+        <ul>
+          <li></li>
+        </ul>
+    </li>
+  <% end %>
+</ol>
+

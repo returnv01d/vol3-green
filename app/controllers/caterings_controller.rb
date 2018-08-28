@@ -1,5 +1,5 @@
 class CateringsController < ApplicationController
-
+  before_action :authenticate_user!
 	def index
     @caterings = Catering.all
 	end
@@ -9,6 +9,7 @@ class CateringsController < ApplicationController
 		rescue ActiveRecord::RecordNotFound
 			record_not_found()
 		end
+    @daily_meals_today = DailyMeal.where(catering: @catering, serving_day: Date.today).all
 	end
 
 	private
