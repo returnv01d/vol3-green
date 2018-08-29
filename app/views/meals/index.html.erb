@@ -4,7 +4,7 @@
 
   <% @meals.each do |m| %>
     <div class="list-group">
-      <a href="meals/<%= m.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+      <a href="<%= catering_meals_path + "/" + m.id.to_s %>" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><%= m.name %></h5>
           <small>meal</small>
