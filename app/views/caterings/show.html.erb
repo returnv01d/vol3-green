@@ -21,6 +21,9 @@
             watched_catering: @catering.id 
           }  
         %>
+      <% if @user_current_order.first.daily_meal == dm %>
+        <p class="badge badge-success">already ordered</p>
+      <% end %>
     </li>
     <br>
   <% end %>
