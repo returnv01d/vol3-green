@@ -1,6 +1,11 @@
 class FoodRequestsController < ApplicationController
 
   def create
+
+    current_user.food_requests.where("created_at BETWEEN ? AND ?", Date.today, Time.now).each do |i|
+      i.destroy
+    end
+
     @f = FoodRequest.new(user_id: current_user.id, daily_meal_id: params[:daily_meal_id])
     if @f.save
       redirect_to catering_path(params[:watched_catering])
