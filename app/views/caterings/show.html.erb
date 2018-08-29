@@ -1,4 +1,3 @@
-
 <h3><%= @catering.name %></h3>
 <%= @catering.city %>
 <%= @catering.description %>
@@ -6,9 +5,12 @@
   <% @daily_meals_today.each do |daily_meal| %>
     <li><%= daily_meal.meal.name %>
         <ul>
-          <li></li>
+          <% daily_meal.meal.ingredients.each do |ingr| %>
+            <li>
+              <%= ingr.name %>
+            </li>
+          <% end %>
         </ul>
     </li>
   <% end %>
 </ol>
-
