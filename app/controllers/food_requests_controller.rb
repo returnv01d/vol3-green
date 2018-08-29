@@ -6,7 +6,7 @@ class FoodRequestsController < ApplicationController
       redirect_to catering_path(params[:watched_catering])
       flash[:notice] ="win"
     else
-      redirect_to catering_path(1)
+      redirect_to catering_path(params[:watched_catering])
       flash[:alert] = "no + #{params[:daily_meal_id]} + #{params[:watched_catering]} + #{current_user.id}"
     end
   end
