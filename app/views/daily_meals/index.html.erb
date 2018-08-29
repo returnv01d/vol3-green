@@ -7,7 +7,7 @@
       <a href="meals/<%= dm.meal.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><%= dm.meal.name %></h5>
-          <small><%= dm.food_requests.where(created_at: Date.today).count %> orders</small>
+          <small><%= dm.food_requests.where("created_at BETWEEN ? AND ?", DateTime.now.beginning_of_day, DateTime.now).count %> orders today</small>
         </div>
         <p class="mb-1"><%= dm.meal.ingredients.pluck(:name).join(", ") %></p>
         <small>Created at: <%= dm.created_at %></small>
