@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'daily_meals/index'
-  get 'daily_meals/new'
-  get 'daily_meals/create'
   resources :ingredients
   devise_for :caterings
   devise_for :users
