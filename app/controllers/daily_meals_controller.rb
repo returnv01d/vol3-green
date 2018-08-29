@@ -12,12 +12,12 @@ class DailyMealsController < ApplicationController
   end
 
   def create
-    @selected_meals = params.require(:daily_meal).permit(meal: [])[:meal].reject { |e| e.empty? }
+    @selected_meal_ids = params.require(:daily_meal).permit(meal: [])[:meal].reject { |e| e.empty? }
 
-    @selected_meals.each do |sm|
+    @selected_meal_ids.each do |sm_id|
       @new_daily_meal = current_catering.daily_meals.build(
         serving_day: Date.today,
-        meal_id: sm
+        meal_id: sm_id
       )
       @new_daily_meal.save
     end
