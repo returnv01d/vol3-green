@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'users/new_allergic_prefs'
   get 'users/create_allergic_prefs'
+  post 'users/create_allergic_prefs'
   get 'users/edit_allergic_prefs'
   get 'users/delete_allergic_prefs'
   resources :ingredients

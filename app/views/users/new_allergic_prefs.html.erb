@@ -1,2 +1,12 @@
-<h1>Users#create_allergic_prefs</h1>
-<p>Find me in app/views/users/create_allergic_prefs.html.erb</p>
+<h1>Choose allergic ingredients</h1>
+
+<div class="container">
+  <%= form_for current_user, url: users_create_allergic_prefs_path, method: 'post' do |f| %>
+    <%= f.select :allergy_ids,
+                 Ingredient.all.collect { |i| [i.name, i.id] },
+                 { include_hidden: false },
+                 :multiple => true, :class => "chzn-select", :style => "width:450px;"  %>
+    <%= f.submit %>
+
+  <% end %>
+</div>
