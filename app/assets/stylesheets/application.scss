@@ -13,7 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap";
+
+  .icon-green{
+     color: green;
+  }
+
+  .icon-red{
+    color: red;
+  }
 
  .alert, .notice{
  	margin: 0;
