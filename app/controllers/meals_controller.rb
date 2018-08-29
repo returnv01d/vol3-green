@@ -6,13 +6,6 @@ class MealsController < ApplicationController
     # The catering service can list all the meals they offer
     @meals = Meal.where(catering: current_catering)
 
-    #Changing meal ingredients name to lowercase
-    @meals.each do |meal|
-      meal.ingredients.each do |ingredient|
-       ingredient.name.downcase!
-      end
-
-    end
     @diets = Diet.all
     @catering = current_catering
   end

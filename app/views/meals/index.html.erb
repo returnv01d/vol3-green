@@ -17,7 +17,7 @@
             <% end %>
           <% end %>
         </div>
-        <p class="mb-1"><%= m.ingredients.pluck(:name).join(", ") %></p>
+        <p class="mb-1"><%= m.ingredients.pluck(:name).map(&:downcase).join(", ") %></p>
         <small>Created at: <%= m.created_at %></small>
       </a>
       <br>
