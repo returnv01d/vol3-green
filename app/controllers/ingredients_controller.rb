@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :authenticate_catering!
-  
+
   def index
     # The ingredients  can list all the ingredients available
     @ingredients = Ingredient.all
@@ -12,7 +12,7 @@ class IngredientsController < ApplicationController
     if @ingredient.save
       flash[:notice] = "Ingredient added successfully!"
     else
-      flash[:notice] = "Ingredient not saved!"
+      flash[:alert] = "Ingredient not saved!"
     end
     redirect_to ingredients_path
 

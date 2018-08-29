@@ -7,4 +7,5 @@ class AddNotNullConstraintToCityAndNameColumnInCateringModel < ActiveRecord::Mig
     change_column :caterings, :name, :string
     change_column :caterings, :city, :string
   end
+
 end
