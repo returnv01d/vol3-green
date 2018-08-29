@@ -14,12 +14,20 @@ class DailyMealsController < ApplicationController
   def create
     @selected_meal_ids = params.require(:daily_meal).permit(meal: [])[:meal].reject { |e| e.empty? }
 
-    @selected_meal_ids.each do |sm_id|
+    begin
+      @selected_meal_ids.each do |sm_id|
       @new_daily_meal = current_catering.daily_meals.build(
         serving_day: Date.today,
         meal_id: sm_id
       )
       @new_daily_meal.save
     end
+    rescue ActiveRecord::RecordNotSaved => e
+      flash[:alert] = "Daily meal saving failed."
+    else
+      flash[:notice] = "Daily meal successfully created."
+    end
+
+    redirect_to catering_daily_meals_path
   end
 end
