@@ -2,7 +2,7 @@ class FoodRequestsController < ApplicationController
 
   def create
 
-    current_user.food_requests.where("created_at BETWEEN ? AND ?", DateTime.now.beggining_of_day, DateTime.now).each do |i|
+    current_user.food_requests.where("created_at BETWEEN ? AND ?", DateTime.now.beginning_of_day, DateTime.now).each do |i|
       i.destroy
     end
 
