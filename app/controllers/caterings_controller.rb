@@ -10,9 +10,9 @@ class CateringsController < ApplicationController
 			record_not_found()
 		end
     @daily_meals_today = DailyMeal.where(catering: @catering, serving_day: Date.today).all
-	end
+  end
 
-	private
+  private
 
 	def record_not_found
 		redirect_to root_path
