@@ -1,9 +1,19 @@
-<div class="container">
-  <%= form_for @meal, url: catering_meals_path, method: 'post' do |f| %>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "meal_name" %>
-    <%= f.select :ingredients, options_for_select(Ingredient.all.collect { |i| [i.name, i.id] }), {}, {:multiple => true, :class => "chzn-select", :style => "width:450px;" } %>
-    <%= f.submit %>
+<h1>Add new meal</h1>
 
-  <% end %>
-</div>
+
+<%= form_for @meal, url: catering_meals_path, method: 'post', :html => {:class => "form-horizontal center"} do |f| %>
+  <div class="form-group">
+    <div class="col-md-8">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "meal_name" %>
+      <br></br>
+    </div>
+    <div class="col-md-8">
+      Ingredients:
+      <%= f.select :ingredients, options_for_select(Ingredient.all.collect { |i| [i.name, i.id] }), {}, {:multiple => true, :class => "form-control", :style => "width:450px;" } %>
+    </div>
+    <div class="col-md-8">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
