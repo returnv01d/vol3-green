@@ -1,16 +1,30 @@
-<h3><%= @catering.name %></h3>
-<%= @catering.city %>
-<%= @catering.description %>
-<ol>
-  <% @daily_meals_today.each do |daily_meal| %>
-    <li><%= daily_meal.meal.name %>
-        <ul>
-          <% daily_meal.meal.ingredients.each do |ingr| %>
-            <li>
-              <%= ingr.name %>
-            </li>
-          <% end %>
-        </ul>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= @catering.name %>, <%= @catering.city %></h1>
+    <p class="lead"><%= @catering.description %></p>
+  </div>
+</div>
+
+<h1>Meals you can order today:</h1>
+<br>
+
+<ul class="list-group">
+  <% @daily_meals_today.each do |dm| %>
+    <li class="list-group-item">
+      <p class="lead"><%= dm.meal.name %></p>
+      <p class="small"><%= dm.meal.ingredients.pluck(:name).join(", ") %></p>
+      <%= button_to "Order this!",
+          { 
+            action: "create",
+            controller:"food_requests",
+            daily_meal_id: dm.id,
+            watched_catering: @catering.id 
+          }  
+        %>
+      <% if @user_current_order.first.try(:daily_meal) == dm %>
+        <p class="badge badge-success">already ordered</p>
+      <% end %>
     </li>
+    <br>
   <% end %>
-</ol>
+</ul>

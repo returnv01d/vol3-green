@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :caterings
   devise_for :users
   
+  resources :food_requests, only: [:create]
   resources :caterings, only: [:index, :show] do
     resources :meals, only: [:index, :show, :edit, :new, :create]
     resources :daily_meals, only: [:index, :new, :create]
