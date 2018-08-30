@@ -32,5 +32,8 @@ class User < ApplicationRecord
 
   after_create do |user|
     user.diets << default_diet
+    Catering.all.each do |c|
+      c.users << user
+    end
   end
 end
