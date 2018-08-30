@@ -24,7 +24,7 @@ class Catering < ApplicationRecord
     {hour: time[0].to_i, min: time[1].to_i}
   end
 
-  def queue_food_order_job catering_id
+  def queue_food_order_job (catering_id)
     now = DateTime.now
     close_min = get_food_order_close_time[:min]
     close_hour = get_food_order_close_time[:hour]
