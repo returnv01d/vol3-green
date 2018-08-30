@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'users/delete_allergic_prefs'
   delete 'users/delete_allergic_prefs'
   get 'users/edit_diet'
-  post 'users/update_diet
+  post 'users/update_diet'
   resources :ingredients
   devise_for :caterings
   devise_for :users
