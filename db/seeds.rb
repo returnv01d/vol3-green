@@ -37,10 +37,7 @@ Diet.create(name: 'Meat')
 Diet.create(name: 'Vegetarian')
 Diet.create(name: 'Vegan')
 
-#ADD TEST USERS
-p 'ADD TEST USERS'
-User.create(email: 'andrzej@nowak.pl', password: 'nowak11', password_confirmation: 'nowak11')
-User.create(email: 'test@test.com', password: '123456', password_confirmation: '123456')
+
 
 #ADD TEST CATERING
 p 'ADD TEST CATERING'
@@ -49,7 +46,10 @@ Catering.create(email: 'test@test.com', password: '123456', password_confirmatio
                 name: 'test catering',
                 city: 'test',
                 food_order_close_time: '10:00')
-
+#ADD TEST USERS
+p 'ADD TEST USERS'
+User.create(email: 'andrzej@nowak.pl', password: 'nowak11', password_confirmation: 'nowak11')
+User.create(email: 'test@test.com', password: '123456', password_confirmation: '123456')
 
 #ADD TEST MEALS
 p 'ADD TEST MEALS'

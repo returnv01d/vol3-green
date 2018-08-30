@@ -20,7 +20,11 @@ class OrderMealForUsersJob < ApplicationJob
     puts 'Started performing job!'
     @catering = Catering.find_by(id: catering_id)
     @autorequested_orders = 0
+    puts 'Users: '
+    puts @catering.users
     users_without_order.each do |user|
+      puts 'ordering meal for user: '
+      puts user
       non_allergic_meals = today_daily_meals.reject{ |dm| dm.is_allergic?(user.allergies) }
       puts 'Non allergic meals: '
       puts non_allergic_meals
