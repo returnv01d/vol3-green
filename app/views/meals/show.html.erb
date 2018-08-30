@@ -2,6 +2,7 @@
   <div class="container">
     <h1 class="display-4"><%= @meal.name %></h1>
     <p class="lead">Ingredients: <%= @ingredients %></p>
+    <p class="lead">Diets: <%= @diets %></p>
     <p>In offer since: <%= @meal.created_at %> (<%= ((Time.now - @meal.created_at)/(60*60*24)).to_i %> days ago)</p>
     <p>Ordered <%= @order_count || 0 %> times (<%= @todays_order_count || 0 %> today)</p>
   </div>

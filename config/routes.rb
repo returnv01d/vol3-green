@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'users/delete_allergic_prefs'
   get 'users/edit_diet'
   post 'users/update_diet'
+  get 'users/dashboard'
   resources :ingredients
   devise_for :caterings
   devise_for :users
