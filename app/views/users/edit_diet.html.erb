@@ -1,0 +1,21 @@
+<h3>
+  Choose your diet
+  <small class="text-muted"> (current: <%= current_user.diets.first.name.downcase %>)</small>
+</h3>
+<br>
+<div class="btn-group btn-group-toggle" >
+  <%= form_tag(action: "update_diet") do |f| %>
+    <!-- what a dirty hack -->
+    <label class="btn btn-<%= current_user.diets.first.name == "Meat" ? "primary" : "secondary" %> active" >
+      Meat <%= radio_button_tag(:diets, "Meat") %>
+    </label>
+    <label class="btn btn-<%= current_user.diets.first.name == "Vegetarian" ? "primary" : "secondary" %> active">
+      Vegetarian <%= radio_button_tag(:diets, "Vegetarian") %>
+    </label>
+    <label class="btn btn-<%= current_user.diets.first.name == "Vegan" ? "primary" : "secondary" %> active">
+      Vegan <%= radio_button_tag(:diets, "Vegan") %>
+    </label>
+    <br></br>
+    <%= submit_tag("Update diet", data: { disable_with: false }) %>
+  <% end %>
+</div>

@@ -17,9 +17,20 @@ class User < ApplicationRecord
   join_table: :users_diets
   has_many :food_requests
 
-  DEFAULT_DIET = Diet.find_by(name: 'Meat').freeze
+  DEFAULT_DIET_NAME = 'Meat'.freeze
+
+  def default_diet
+    Diet.find_or_create_by(name: DEFAULT_DIET_NAME)
+  end
+
+  def has_ordered_food_today?
+    if self.food_requests.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now).first != nil
+      return true
+    end
+    false
+  end
 
   after_create do |user|
-    user.diets << DEFAULT_DIET
+    user.diets << default_diet
   end
 end

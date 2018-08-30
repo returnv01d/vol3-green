@@ -1,15 +1,24 @@
+
 <div class="container-fluid">
   <h1>Meal list</h1>
   <p class="lead">This is the list of the meals for <strong><%= @catering.name %></strong></p>
 
   <% @meals.each do |m| %>
     <div class="list-group">
-      <a href="<%= m.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1"><%= m.name %></h5>
-          <small>meal</small>
+
+      <a href="<%= catering_meals_path + "/" + m.id.to_s %>" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 ">
+          <h5 class="mb-1 mr-auto p-2"><%= m.name %></h5>
+          <% @diets.each do | diet | %>
+            <h6 class="mb-1"> <%= diet.name.downcase %>:</h6>
+            <% if m.diets.include?(diet) %>
+                <i class="fas fa-check icon-green p-2"></i>
+              <% else %>
+                <i class="fas fa-times icon-red p-2"></i>
+            <% end %>
+          <% end %>
         </div>
-        <p class="mb-1"><%= m.ingredients.pluck(:name).join(", ") %></p>
+        <p class="mb-1"><%= m.ingredients.pluck(:name).map(&:downcase).join(", ") %></p>
         <small>Created at: <%= m.created_at %></small>
       </a>
       <br>

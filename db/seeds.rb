@@ -46,8 +46,9 @@ User.create(email: 'test@test.com', password: '123456', password_confirmation: '
 p 'ADD TEST CATERING'
 
 Catering.create(email: 'test@test.com', password: '123456', password_confirmation: '123456',
-name: 'test catering',
-city: 'test')
+                name: 'test catering',
+                city: 'test',
+                food_order_close_time: '10:00')
 
 
 #ADD TEST MEALS
@@ -110,6 +111,5 @@ sunflower_seeds = Ingredient.find_or_create_by!(name: 'Sunflower seeds')
 sweet_potato = Ingredient.find_or_create_by!(name: 'Sweet potato')
 meal.ingredients << broccoli << tofu << pumpkin << sunflower_seeds << sweet_potato
 meal.diets << Diet.find_or_create_by!(name: 'Vegan')
-
 
 

@@ -10,9 +10,11 @@ class CateringsController < ApplicationController
 			record_not_found()
 		end
     @daily_meals_today = DailyMeal.where(catering: @catering, serving_day: Date.today).all
-	end
+    @user_current_order = FoodRequest.where(user: current_user)
+    								 .where("created_at BETWEEN ? AND ?", DateTime.now.beginning_of_day, DateTime.now)
+  end
 
-	private
+  private
 
 	def record_not_found
 		redirect_to root_path
