@@ -17,6 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
 gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer'
 # Bootstrap does not want to work with trr, it prefers miniracer

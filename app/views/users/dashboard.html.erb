@@ -1,0 +1,10 @@
+
+<% if @current_food_request %>
+  <%= @current_food_request.id %>
+<% else %>
+  No active food requests.
+<%end %>
+
+<% @user_historic_food_requests.each do | food_request | %>
+<h2>  <%= food_request.daily_meal.catering.name %> </h2>
+<% end %>
