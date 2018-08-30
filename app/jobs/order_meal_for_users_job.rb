@@ -2,13 +2,12 @@ class OrderMealForUsersJob < ApplicationJob
   queue_as :order_meal
   attr_accessor :catering, :autorequested_orders
   after_perform do |job|
-    puts "Job finished for #{job.catering.name}.Autorequested orders: #{job.autorequested_orders}."
+    puts "Job finished for #{job.catering.name} <##{job.catering.email}>.Autorequested orders: #{job.autorequested_orders}."
 
     if Catering.exists?(id: job.catering.id)
       close_hour = job.catering.get_food_order_close_time[:hour]
       close_minute = job.catering.get_food_order_close_time[:min]
       job_date = DateTime.now.tomorrow.change({hour: close_hour, min: close_minute})
-      p job_date
       OrderMealForUsersJob.set(wait_until: job_date).perform_later(job.catering.id)
     end
   end
@@ -18,16 +17,23 @@ class OrderMealForUsersJob < ApplicationJob
       puts "Catering with id #{catering_id} does not exist! quiting job..."
       return false
     end
-
+    puts 'Started performing job!'
     @catering = Catering.find_by(id: catering_id)
     @autorequested_orders = 0
     users_without_order.each do |user|
       non_allergic_meals = today_daily_meals.reject{ |dm| dm.is_allergic?(user.allergies) }
+      puts 'Non allergic meals: '
+      puts non_allergic_meals
       preferred_meals = non_allergic_meals.select { |meal| meal.diet == user.diets.first}
+      puts 'Preferred meals: '
+      puts preferred_meals
       if preferred_meals.nil?
         preferred_meals = @catering.daily_meals
       end
-      FoodRequest.create(is_autorequested: true, user: user, daily_meal: preferred_meals.sample)
+      ordered_meal = preferred_meals.sample
+      puts 'Ordered meal: '
+      puts ordered_meal
+      FoodRequest.create(is_autorequested: true, user: user, daily_meal: ordered_meal)
       @autorequested_orders += 1
     end
   end
