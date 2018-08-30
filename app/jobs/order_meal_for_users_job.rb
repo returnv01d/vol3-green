@@ -30,7 +30,7 @@ class OrderMealForUsersJob < ApplicationJob
   end
 
   def today_daily_meals
-    @catering.daily_meals.where('serving_day == ?', Date.today)
+    @catering.daily_meals.where('serving_day = ?', Date.today)
   end
 
   def users_without_order
