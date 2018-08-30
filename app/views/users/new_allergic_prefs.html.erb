@@ -1,0 +1,13 @@
+<h1>Choose allergic ingredients</h1>
+
+<div class="container">
+  <%= form_for current_user, url: users_create_allergic_prefs_path, method: 'post' do |f| %>
+    <%= f.select :allergy_ids,
+                 Ingredient.all.collect { |i| [i.name, i.id] },
+                 { include_hidden: false },
+                 :multiple => true, :class => "chzn-select", :style => "width:450px;"  %>
+    <br><br>
+    <%= f.submit %>
+
+  <% end %>
+</div>
