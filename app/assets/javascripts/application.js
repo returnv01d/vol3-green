@@ -17,6 +17,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+//= require tempusdominus-bootstrap-4.js
+//= require moment
 $(document).ready(function(){
 	setTimeout(function(){
 		$('.notice-wrapper').fadeOut("slow", function(){
