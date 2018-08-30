@@ -16,7 +16,7 @@ class MealsController < ApplicationController
     # Times ordered, last ordered, ...
     @meal = Meal.find(params.require(:id))
 
-    @diets = Diet.all
+    @diets = @meal.diets.pluck(:name).map(&:downcase).join(", ")
 
     @ingredients = @meal.ingredients.pluck(:name).join(", ")
     @order_count = DailyMeal.where(meal: @meal).map { |dm| dm.food_requests.count }.reduce(:+)
