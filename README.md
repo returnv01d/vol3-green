@@ -2,11 +2,11 @@
 
 ### Description ###
 ----
-Necessity is the mother of inventions. People constantly forget things, sometimes even to order their meal, and You won't work efficiently when You're hungry, righy?
+Necessity is the mother of inventions. People constantly forget things, sometimes even to order their meal, and you won't work efficiently when you're hungry, right?
 This is where we come in. 
-With our application You need not to remember to order meal everyday, just choose Your preferences, and we will put our most effort to keep You well fed and happy with Your meal. ;)
+With our application you no longer have to order your meals by yourself everyday. Just choose your preferences, and we will make an effort to keep you well fed and happy with your meal. ;)
 
-####[Heroku!!](http://zjadliwe.herokuapp.com/)####
+[Heroku!!](http://zjadliwe.herokuapp.com/)
 
 ### Gems we use ###
 ----
@@ -16,19 +16,25 @@ Ruby      | 2.5.1
 Rails     | 5.2.1
 Bootstrap | 4.1.3
 Devise    | 4.5.0
-Rspec     | 3.8.0
+RSpec     | 3.8.0
+
+Database server: PostgreSQL 9.6.8
+
+...and more, probably ;)
 
 ### How to run tests ###
 ----
-Just Type `rspec` in the console
+Just type `rspec` in the console.
 
 ### Any questions? Contact us! ###
 
-* [Bartomiej](https://github.com/returnv01d)
+* [Bartłomiej](https://github.com/returnv01d)
 * [Piotr](https://github.com/pgorni)
 * [Grzegorz](https://github.com/kompnet)
-* [Rafal](https://github.com/Lemcur)
+* [Rafał](https://github.com/Lemcur)
+
+### Connecting to the database ###
 
 Set the following:
-- `DB_USERNAME` -> your postgres role
-- `DB_PASSWORD` -> your postgres role's password
+- `DB_USERNAME` -> your PostgreSQL role
+- `DB_PASSWORD` -> your PostgreSQL role's password

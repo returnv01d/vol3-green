@@ -13,6 +13,10 @@
       <%= f.select :ingredients, options_for_select(Ingredient.all.collect { |i| [i.name, i.id] }), {}, {:multiple => true, :class => "form-control", :style => "width:450px;" } %>
     </div>
     <div class="col-md-8">
+      Diets:
+      <%= f.select :diets, options_for_select(Diet.all.collect { |i| [i.name, i.id] }), {}, {:multiple => true, :class => "form-control", :style => "width:450px;" } %>
+    </div>
+    <div class="col-md-8">
       <%= f.submit %>
     </div>
   </div>

@@ -10,4 +10,10 @@ class Meal < ApplicationRecord
                           foreign_key: 'meal_id',
                           join_table: :meals_diets
 
+  def is_allergic?(user_allergies)
+    if user_allergies and self.ingredients
+      return true
+    end
+    false
+  end
 end
