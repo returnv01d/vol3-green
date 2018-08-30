@@ -38,6 +38,10 @@ class MealsController < ApplicationController
       @meal.ingredients << Ingredient.find(i_id.to_i)
     end
 
+    meal_params[:diets].reject { |e| e.empty? }.each do |d_id|
+      @meal.diets << Diet.find(d_id.to_i)
+    end
+
     if @meal.save
       flash[:notice] = "Meal successfully created!"
       redirect_to new_catering_meal_path
@@ -50,7 +54,7 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, ingredients: [])
+    params.require(:meal).permit(:name, ingredients: [], diets: [])
   end
   
 end
