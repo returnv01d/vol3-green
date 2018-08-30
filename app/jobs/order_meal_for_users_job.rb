@@ -24,6 +24,9 @@ class OrderMealForUsersJob < ApplicationJob
     users_without_order.each do |user|
       non_allergic_meals = today_daily_meals.reject{ |dm| dm.is_allergic?(user.allergies) }
       preferred_meals = non_allergic_meals.select { |meal| meal.diet == user.diets.first}
+      if preferred_meals.nil?
+        preferred_meals = @catering.daily_meals
+      end
       FoodRequest.create(is_autorequested: true, user: user, daily_meal: preferred_meals.sample)
       @autorequested_orders += 1
     end
