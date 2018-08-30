@@ -6,6 +6,7 @@
                  Ingredient.all.collect { |i| [i.name, i.id] },
                  { include_hidden: false },
                  :multiple => true, :class => "chzn-select", :style => "width:450px;"  %>
+    <br><br>
     <%= f.submit %>
 
   <% end %>
