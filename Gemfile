@@ -5,10 +5,12 @@ ruby '2.5.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap4-datetime-picker-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.5.0'
 gem 'execjs'
 gem 'ffaker'
+gem 'momentjs-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mini_racer', '~> 0.2.0'
