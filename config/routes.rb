@@ -17,3 +17,4 @@ Rails.application.routes.draw do
     resources :daily_meals, only: [:index, :new, :create]
   end
   root to: "welcome#index"
+end
