@@ -1,0 +1,25 @@
+<% if @current_food_request %>
+  <h4 class="mb-1 mr-auto p-2"> Your current order is:</h4>
+  <div class="list-group-item list-group-item-action flex-column align-items-start" style="margin-bottom: 2rem">
+    <h4 class="mb-1 mr-auto p-2"><b><%= @current_food_request.daily_meal.meal.name %></b></h4>
+    <p class="mb-1"><%= @current_food_request.daily_meal.meal.ingredients.pluck(:name).map(&:downcase).join(", ") %></p>
+  </div>
+<% else %>
+  <div style="margin-bottom: 2rem">
+    <h4 class="mb-1 mr-auto p-2"> Order something <%= link_to "Here!", caterings_path %></h4>
+  </div>
+<% end %>
+<h4 class="mb-1 mr-auto p-2">Your past orders:</h4>
+<% @user_historic_food_requests.each do |history| %>
+  <div class="list-group-item list-group-item-action flex-column align-items-start" style="margin-top:10px">
+    <div class="d-flex w-100 justify-content-between">
+      <div class="list-group">
+        <h4 class="mb-1 mr-auto p-2">
+          <%= history.daily_meal.meal.name %>
+        </h4>
+        <h6 style="color:#888;">Ordered at: <%= history.created_at.strftime("%d %B %Y") %> </h6>
+        <p class="mb-1"><%= history.daily_meal.meal.ingredients.pluck(:name).map(&:downcase).join(", ") %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
