@@ -11,7 +11,7 @@ class Meal < ApplicationRecord
                           join_table: :meals_diets
 
   def is_allergic?(user_allergies)
-    if user_allergies & self.ingredients
+    if user_allergies and self.ingredients
       return true
     end
     false
