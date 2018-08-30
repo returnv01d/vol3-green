@@ -28,16 +28,6 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def allergy_params
-    params.require(:ingredient).permit(:id)
-  end
-
-  def user_params
-    params.require(:user).permit(allergy_ids: [])
-  end
-
   def edit_diet
     @diet = current_user.diets.first
   end
@@ -63,6 +53,16 @@ class UsersController < ApplicationController
         where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now).first
     @user_historic_food_requests = @user.food_requests.
         where('created_at  < ? ', DateTime.now.beginning_of_day)
+  end
+
+  private
+
+  def allergy_params
+    params.require(:ingredient).permit(:id)
+  end
+
+  def user_params
+    params.require(:user).permit(allergy_ids: [])
   end
 
 end
