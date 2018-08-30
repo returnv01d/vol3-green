@@ -37,6 +37,30 @@
   </div>
 
   <div class="field">
+    <%= f.label :food_order_close_time %>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+            <%= f.text_field :food_order_close_time,  class: 'form-control datetimepicker-input',
+                             data: {target: "#datetimepicker3"}%>
+            <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fas fa-clock"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#datetimepicker3').datetimepicker({
+                  format: 'HH:mm'
+              });
+          });
+      </script>
+    </div>
+  </div>
+
+  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description, autofocus: true %>
   </div>
