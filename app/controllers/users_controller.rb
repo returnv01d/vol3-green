@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def edit_diet
-    current_user = current_user || User.last
     @diet = current_user.diets.first
   end
 
