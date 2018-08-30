@@ -1,2 +1,40 @@
-<h1>Users#edit_allergic_prefs</h1>
-<p>Find me in app/views/users/edit_allergic_prefs.html.erb</p>
+<h1>Allergic ingredients</h1>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        Nr
+      </th>
+      <th scope="col">
+        Name
+      </th>
+      <th scope="col">
+        Action
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.allergies.each.with_index(1) do |ingredient, index| %>
+    <tr>
+      <th scope="row">
+        <%= index %>
+      </th>
+      <td>
+        <p><%= ingredient.id %></p>
+      </td>
+      <td>
+        <p><%= link_to "Delete",
+                users_delete_allergic_prefs_path(ingredient: {id: ingredient.id}),
+                method: :delete,
+                class: "btn btn-danger btn-xs",
+                data:{confirm: "Are you sure?"} %>
+        </p>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<!-- <%= @user.last_name %> -->
