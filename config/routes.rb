@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'users/create_allergic_prefs'
   get 'users/edit_allergic_prefs'
   get 'users/delete_allergic_prefs'
-  get 'users/dashboard'
+  get 'users/edit_diet'
+  post 'users/update_diet'
+
+
   resources :ingredients
   devise_for :caterings
   devise_for :users
