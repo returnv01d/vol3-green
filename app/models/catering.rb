@@ -15,7 +15,7 @@ class Catering < ApplicationRecord
     close_hour = get_food_order_close_time[:hour]
 
     if now.hour > close_hour && now.min > close_minute
-      job_date = DateTime.now.tommorow
+      job_date = DateTime.now.tomorrow
       job_date.min = close_minute
       job_date.hour = close_hour
     else
