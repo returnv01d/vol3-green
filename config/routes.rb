@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/delete_allergic_prefs'
   get 'users/edit_diet'
   post 'users/update_diet'
+  get 'users/dashboard'
 
 
   resources :ingredients
